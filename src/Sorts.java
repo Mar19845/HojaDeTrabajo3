@@ -85,4 +85,87 @@ public class Sorts {
         for(int i = 0; i < num; i++, rightEnd--)
             a[rightEnd] = tmp[rightEnd];
     }
+  /**
+   * sacado de internet
+   * @param a 
+   */
+  public void quickSort(Comparable[] a) {
+            quicksort(a, 0, a.length-1);
+            for(int i=0;i<a.length;i++){
+          System.out.println(a[i]);
+      }
+        }
+        /**
+         * sacado de internet ayuda al quick sort
+         * @param a
+         * @param lo
+         * @param hi 
+         */
+        private static void quicksort(Comparable[] a, int lo, int hi) {
+            if(lo >= hi) return;
+            int pi = partition(a, lo, hi);
+            quicksort(a, lo, pi-1);
+            quicksort(a, pi+1, hi);
+        }
+        /**
+         * sacado de internet
+         * ayuda al quick sort
+         * @param a
+         * @param lo
+         * @param hi
+         * @return 
+         */
+        private static int partition(Comparable[] a, int lo, int hi) {
+            int i = lo + 1;
+            int j = hi;
+
+            while(i <= j) {
+                if(a[i].compareTo(a[lo]) <= 0) { 
+                    i++; 
+                }
+                else if(a[j].compareTo(a[lo]) > 0) { 
+                    j--;
+                }
+                else if(j < i) {
+                    break;
+                }
+                else
+                    exchange(a, i, j);
+            }
+            exchange(a, lo, j);
+            return j;
+        }
+        /**
+         * sacad de internet 
+         * ayuda al quick sort
+         * @param a
+         * @param i
+         * @param j 
+         */
+        private static void exchange(Object[] a, int i, int j) {
+            Object tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+        }
+       public  void Bubblesort(Comparable[] x){
+           for (int i= x.length; i>1; i--){
+               for (int j = 1; j<i; j++){
+                   if (x[j-1].compareTo(x[j]) > 0){
+                       swap(x,j-1,j);
+                   }
+               }
+           }
+           for(int i=0;i<x.length;i++){
+               System.out.println(x[i]);
+           }
+    }
+      public static void swap(Comparable data[], int i, int j)
+        // pre: 0 <= i,j < data.length
+        // post: data[i] and data[j] are exchanged
+        {
+        Comparable temp;
+        temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
+        }   
 }
