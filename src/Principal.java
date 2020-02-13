@@ -15,9 +15,9 @@ public class Principal {
         int cantidad = teclado.nextInt();
         teclado.nextLine();
         //creacion del archivo txt
-        gen.GeneradorRandom(cantidad);
-        sorts.selectionSort(gen.getLista(), cantidad);
-        
+        gen.Generador(cantidad);
+       //sorts.Selectionsort(gen.Lista);
+        sorts.mergeSort(gen.Lista);
         
         
     }

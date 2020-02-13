@@ -4,37 +4,42 @@
  */
 import java.io.*;
 import java.util.*;
-public class Generador {
+public class Generador implements Comparable {
     //creacion del variables que nos serviran mas tarde
-    Random random = new Random();
-    int n = 0;
-    String nameFile = "numeros.txt";
-    public int[] Lista;
-    //metedo que genera los numeros al azar y los escribe en el archivo de text.
-    
-    public int [] GeneradorRandom(int cantidad) {
-        Lista = new int [cantidad];
-        try (PrintWriter file = new PrintWriter(
-                new BufferedWriter(
-                        new FileWriter(nameFile)));
-                ){
-            for(int i = 0; i<cantidad; i++){
-                n = random.nextInt(cantidad);
-                Lista[i]=n;
-                file.println(n);
-            }
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        // en consola se imprime que ya se ha creado el archivo y se regresa el dataArray
-        System.out.println("El Archivo: " + nameFile + " ha sido creado");
-        return Lista;
-    }
+    Random r = new Random();
+	int n = 0;
+	String nameFile = "random.txt";
 
-    /**
-     * @return Lista
-     */
-    public int[] getLista(){
-        return Lista;
+	public String[] Lista;
+	
+	public String[] Generador(int cantidad) {
+                Lista = new String[cantidad];
+		try (PrintWriter file = new PrintWriter(
+			new BufferedWriter(
+				new FileWriter(nameFile)));
+		){
+			for(int i = 0; i<cantidad; i++){
+				n = r.nextInt(cantidad);
+				//file.println(n);
+                                String str1 = Integer.toString(n); 
+				Lista[i]=str1;
+				file.println(n);
+			}
+			//file.println(dataArray);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+
+		System.out.println("File " + nameFile + " has been created!");
+
+		return Lista;
+	}
+
+	public String[] getLista(){
+		return Lista;
+	}
+    @Override
+    public int compareTo(Object o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
