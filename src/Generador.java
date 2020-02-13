@@ -9,17 +9,17 @@ public class Generador {
     Random random = new Random();
     int n = 0;
     String nameFile = "numeros.txt";
-    public ArrayList<String> Lista = new ArrayList<String>();
+    public ArrayList<Integer> Lista = new ArrayList<>();
     //metedo que genera los numeros al azar y los escribe en el archivo de text.
     
-    public ArrayList<String> GeneradorRandom(int cantidad) {
+    public ArrayList<Integer> GeneradorRandom(int cantidad) {
         try (PrintWriter file = new PrintWriter(
                 new BufferedWriter(
                         new FileWriter(nameFile)));
                 ){
             for(int i = 0; i<cantidad; i++){
                 n = random.nextInt(cantidad);
-                Lista.add(String.valueOf(n));
+                Lista.add((n));
                 file.println(n);
             }
         }catch(IOException e){
@@ -33,7 +33,7 @@ public class Generador {
     /**
      * @return Lista
      */
-    public ArrayList<String> getLista(){
+    public ArrayList<Integer> getLista(){
         return Lista;
     }
 }
