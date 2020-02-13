@@ -10,7 +10,7 @@ public class Sorts {
      * @param data
      * @param n 
      */
-   public static void selectionSort(int data[], int n){
+   public void selectionSort(int data[], int n){
        int numUnsorted = n;
        int index;
        int max=-1;
