@@ -8,8 +8,9 @@ public class Sorts {
     /**
      * sacado de internet
      * @param a 
+     * @return  
      */
-  public void Selectionsort(Comparable[] a) { 
+  public Comparable[] Selectionsort(Comparable[] a) { 
    
     int N = a.length;
    
@@ -25,20 +26,20 @@ public class Sorts {
             a[i] = a[minIndex];
             a[minIndex] = temp;
         }
-        System.out.println(a[i]);
+        
     }
-   
+    return a;
+    
   }
   /**
    * sacado de internet
    * @param a 
+     * @return  
    */
-  public void mergeSort(Comparable [ ] a){
+  public Comparable [ ] mergeSort(Comparable [ ] a){
       Comparable[] tmp = new Comparable[a.length];
       mergeSort(a, tmp,  0,  a.length - 1);
-      for(int i=0;i<a.length;i++){
-          System.out.println(a[i]);
-      }
+      return a;
   }
   /**
    * sacado de internet
@@ -88,12 +89,11 @@ public class Sorts {
   /**
    * sacado de internet
    * @param a 
+     * @return  a
    */
-  public void quickSort(Comparable[] a) {
+  public Comparable[] quickSort(Comparable[] a) {
             quicksort(a, 0, a.length-1);
-            for(int i=0;i<a.length;i++){
-          System.out.println(a[i]);
-      }
+            return a;
         }
         /**
          * sacado de internet ayuda al quick sort
@@ -147,7 +147,12 @@ public class Sorts {
             a[i] = a[j];
             a[j] = tmp;
         }
-       public  void Bubblesort(Comparable[] x){
+        /**
+         * 
+         * @param x
+         * @return x
+         */
+       public  Comparable[] Bubblesort(Comparable[] x){
            for (int i= x.length; i>1; i--){
                for (int j = 1; j<i; j++){
                    if (x[j-1].compareTo(x[j]) > 0){
@@ -155,9 +160,7 @@ public class Sorts {
                    }
                }
            }
-           for(int i=0;i<x.length;i++){
-               System.out.println(x[i]);
-           }
+           return x;
     }
       public static void swap(Comparable data[], int i, int j)
         // pre: 0 <= i,j < data.length
@@ -167,5 +170,6 @@ public class Sorts {
         temp = data[i];
         data[i] = data[j];
         data[j] = temp;
-        }   
+        } 
+      
 }

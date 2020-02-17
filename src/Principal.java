@@ -17,10 +17,16 @@ public class Principal {
         //creacion del archivo txt
         gen.Generador(cantidad);
         //sorts.Selectionsort(gen.Lista);
-        //sorts.mergeSort(gen.Lista);
-        //sorts.quickSort(gen.Lista);
-        sorts.Bubblesort(gen.Lista);
-        
-        
+        gen.NewTXT(sorts.Selectionsort(gen.Lista));
+        sorts.Selectionsort(gen.txt);
+        //merge sort
+        gen.NewTXT(sorts.mergeSort(gen.Lista));
+        sorts.mergeSort(gen.txt);
+        //quicksort
+        gen.NewTXT(sorts.quickSort(gen.Lista));
+        sorts.quickSort(gen.txt);
+        //bubble sort
+        gen.NewTXT(sorts.Bubblesort(gen.Lista));
+        sorts.Bubblesort(gen.txt); 
     }
 }
